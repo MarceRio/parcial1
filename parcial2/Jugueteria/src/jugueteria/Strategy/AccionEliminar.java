@@ -47,8 +47,7 @@ public class AccionEliminar implements Accion{
         
         metodo.mostrarJuguete(juguetes);
         
-        num=scanner.nextInt()-1;
-        
+        num=metodo.leerInt()-1;
                       
         Set<Juguete> jugueteModificados = metodo.eliminarJuguete(jugueteCopia,num);
         
@@ -57,8 +56,7 @@ public class AccionEliminar implements Accion{
         for(int i = 0; i < juguete.size(); i++) {            
             
                     
-            //Juguete nuevo= juguete.get(num);  
-            
+                        
             juguete.get(i).setId(i+1);            
                        
         }

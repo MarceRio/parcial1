@@ -45,20 +45,20 @@ public class AccionClonar implements Accion{
               
         
         int num;
-        int total;
+        
         
         
         
         System.out.println("Ingrese el numero del juguete que quiere clonar");
         metodo.mostrarJuguete(juguetes);        
-        num=scanner.nextInt()-1;
+        num=metodo.leerInt()-1;
         
         Juguete[] juguete = juguetes.toArray(new Juguete[juguetes.size()]);
         
         Juguete nuevo= juguete[num];        
                 
         System.out.println("Ingrese el número de veces que quiere clonar el juguete");
-        num=scanner.nextInt();
+        num=metodo.leerInt();
         
         Set<Juguete> juguetesCopia = new LinkedHashSet<>(juguetes);
         for(int i = 0; i < num; i++) {

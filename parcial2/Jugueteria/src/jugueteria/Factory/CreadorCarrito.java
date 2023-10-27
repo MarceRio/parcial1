@@ -22,6 +22,8 @@ public class CreadorCarrito implements CreadorJuguete{
     
     private static Scanner scanner= new Scanner(System.in);
     
+    Metodos metodo= new Metodos(); 
+    
     @Override
     public Juguete creadorJuguete(){     
         
@@ -32,15 +34,17 @@ public class CreadorCarrito implements CreadorJuguete{
     int numeroPuertas;
         
         
-        System.out.println("Ingrese un color para el carrito ");
-        color= scanner.next();
+        System.out.println("Ingrese un color para el carrito "); 
+             
+        color= metodo.validarString();
 
         System.out.println("Ingrese el tipo de marca del carrito");
-        marca= scanner.next();
+        
+        marca= metodo.validarString();
 
         System.out.println("Ingrese el numero de puertas");
-        numeroPuertas= scanner.nextInt();       
-             
+        
+        numeroPuertas= metodo.leerInt(); 
            
                   
                 

@@ -27,20 +27,20 @@ public class Main {
     
     private static Scanner scanner = new Scanner(System.in);
 
-    private static final int OPCION_SALIR = 5;
+    private static final int OPCION_SALIR = 9;
 
     public static void main(String[] args) {
         
     Menu acceso= Menu.getInstance();  
     
-    acceso.mostrarMenu();
-       
+    acceso.inicializarLista();
         
+    acceso.mostrarMenu();
+         
        
    
     
     }
-  
     
     
     

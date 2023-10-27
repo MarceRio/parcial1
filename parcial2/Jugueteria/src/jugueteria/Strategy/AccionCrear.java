@@ -26,21 +26,38 @@ import jugueteria.Metodos;
 public class AccionCrear implements Accion {
     
  private static Scanner scanner= new Scanner(System.in);
+ 
+ Metodos metodo= new Metodos(); 
      
     int opcion;
     
     private final CreadorPeluche creadorPeluche =new CreadorPeluche();
     private final CreadorCarrito creadorCarrito =new CreadorCarrito();
+    Menu acceso= Menu.getInstance(); 
+    
+    
+    
     
                  
     @Override
     public Set<Juguete> aplicar(Set<Juguete> juguetes) {
-
-        System.out.println("Ingrese una opcion: 1. Crear Peluche 2. Crear Carrito ");
-        opcion = scanner.nextInt();
         
         Set<Juguete> jugueteCopia= new LinkedHashSet<>(juguetes);
-                                    
+        
+         if (jugueteCopia.size()==0){
+            
+            System.out.println("Es necesario crear un juguete");
+         
+            acceso.mostrarMenu();
+         
+         }
+
+        System.out.println("Ingrese una opcion: 1. Crear Peluche 2. Crear Carrito ");
+       
+        opcion=metodo.leerInt();
+        
+             
+                                            
 
         if (opcion ==1){            
                     

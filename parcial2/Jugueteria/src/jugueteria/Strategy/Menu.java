@@ -14,6 +14,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import jugueteria.Carrito;
 import jugueteria.Juguete;
+import jugueteria.Metodos;
 import jugueteria.Peluche;
 
 /**
@@ -25,8 +26,10 @@ public class Menu {
     private static Scanner scanner = new Scanner(System.in);
     
     private final AccionHandler accionHandler = new AccionHandler();
+    
+    Metodos metodo= new Metodos();
 
-    private static final int OPCION_SALIR = 5;
+    private static final int OPCION_SALIR = 9;
     
     private Set<Juguete> juguetes= new LinkedHashSet<>();
     
@@ -59,12 +62,11 @@ public class Menu {
       
         do {
             System.out.println("");
-            System.out.println("Ingrese una opcion: 1. Crear  2. Clonar 3. Mostrar 4. Eliminar 5.Filtrar 6.Salir");
+            System.out.println("Ingrese una opcion: 1. Crear  2. Clonar 3. Mostrar 4. Eliminar 5.Filtrar 6.Carrito Max Puertas "
+                    + "7.Set Juguete a Mapa" +" "+ "8.Eliminar juguete por Color"+" "+  "9.Salir");
 
-            opcion = scanner.nextInt();
-
-            scanner.nextLine();
-
+            opcion= metodo.leerInt();
+            
             Accion accion =strategy.get(opcion);
 
             if (opcion == OPCION_SALIR ) {continue;}
@@ -87,7 +89,13 @@ public class Menu {
         
     }
     
-    
+    public void inicializarLista() {
+        juguetes.add(Carrito.builder().id(1).color("Negro").numeroPuertas((short) 4).marca("Renault").build());
+        juguetes.add(Peluche.builder().id(2).color("Negro").relleno("Algodon").materialExterior("Cuero").build());
+        juguetes.add(Carrito.builder().id(3).color("Azul").numeroPuertas((short) 8).marca("Renault").build());
+        juguetes.add(Peluche.builder().id(4).color("Rojo").relleno("Tela").materialExterior("Cuero").build());
+    }
+
         
         
 }

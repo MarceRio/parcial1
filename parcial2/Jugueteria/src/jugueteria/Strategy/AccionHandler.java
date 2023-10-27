@@ -25,7 +25,10 @@ public class AccionHandler {
                 new AccionVer(),
                   new AccionClonar(),
                   new AccionFiltrar(),
-               new AccionEliminar()).collect(Collectors.toList());           
+                  new AccionMapa(),
+                  new AccionCarritoMaxPuerta(),
+                  new AccionColores(),
+                  new AccionEliminar()).collect(Collectors.toList());           
             
 
             //List.of(new AccionCrear(),

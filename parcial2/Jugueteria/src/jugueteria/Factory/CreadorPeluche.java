@@ -22,6 +22,8 @@ import jugueteria.Peluche;
 public class CreadorPeluche implements CreadorJuguete {
     
     private static Scanner scanner= new Scanner(System.in);
+    
+    Metodos metodo= new Metodos(); 
 
     @Override
     public Juguete creadorJuguete() {
@@ -32,17 +34,14 @@ public class CreadorPeluche implements CreadorJuguete {
     int id;
 
 
-    System.out.println (
-    "Ingrese el tipo de material de relleno");
-    relleno  = scanner.next();
+    System.out.println ("Ingrese el tipo de material de relleno");
+    relleno  = metodo.validarString();
     
-    System.out.println (
-    "Ingrese un color para el peluche ");
-    color  = scanner.next();
+    System.out.println ("Ingrese un color para el peluche ");
+    color  = metodo.validarString();
 
-    System.out.println (
-    "Ingrese el tipo de material exterior");
-    materialExterior  = scanner.next();
+    System.out.println ("Ingrese el tipo de material exterior");
+     materialExterior  = metodo.validarString();
       
                    
 
@@ -50,8 +49,7 @@ public class CreadorPeluche implements CreadorJuguete {
                 .materialExterior(materialExterior)
                 .color(color)
                 .relleno(relleno)
-                .build();
-        
+                .build();    
        
         
                 

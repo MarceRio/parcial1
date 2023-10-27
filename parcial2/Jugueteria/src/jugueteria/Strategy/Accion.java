@@ -13,7 +13,7 @@ import jugueteria.Juguete;
  *
  * @author Personal
  */
-public interface Accion {
+public interface Accion  {
     
     Set<Juguete> aplicar(Set<Juguete> juguetes);
     
